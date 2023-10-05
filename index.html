@@ -25,16 +25,13 @@
 						<li><a href="#one" class="active">1. 연구 배경 및 아이디어</a></li>
 						<li><a href="#two">2. 연구 계획</a></li>
 						<li><a href="#three">3. 연구 과정</a></li>
-						<li><a href="#four">4. 연구 결과</a></li>
+						<li><a href="#four">4. 결론</a></li>
 					</ul>
 				</nav>
 				<footer>
 					<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<li><a href="https://github.com/Jaeho-99" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a></li>
+						<li><a href="mailto: wogh6860@g.hongik.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
 				</footer>
 			</section>
@@ -73,8 +70,8 @@
 									<p>
 										<h4>1.2. 단어 안내 웹 사이트</h4>
 										<ul>
-											<li><a href="https://ratsgo.github.io/machine%20learning/2017/03/18/HMMs/" target="_blank">Hidden Markov Model(은닉 마코프 모델)</a></li>
-											<li><a href="https://brunch.co.kr/@nostalgia9/500" target="_blank">Map Matching(맵 매칭)</a></li>
+											<li><a href="https://ratsgo.github.io/machine%20learning/2017/03/18/HMMs/" target="_blank" style="color:darkcyan;">Hidden Markov Model(은닉 마코프 모델)</a></li>
+											<li><a href="https://brunch.co.kr/@nostalgia9/500" target="_blank" style="color:darkcyan;">Map Matching(맵 매칭)</a></li>
 										</ul>
 									</p>
 									<p>
@@ -95,45 +92,156 @@
 						<!-- Two -->
 							<section id="two">
 								<div class="container">
-									<h3>Things I Can Do</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet.</p>
-									<ul class="feature-icons">
-										<li class="icon solid fa-code">Write all the code</li>
-										<li class="icon solid fa-cubes">Stack small boxes</li>
-										<li class="icon solid fa-book">Read books and stuff</li>
-										<li class="icon solid fa-coffee">Drink much coffee</li>
-										<li class="icon solid fa-bolt">Lightning bolt</li>
-										<li class="icon solid fa-users">Shadow clone technique</li>
-									</ul>
+									<h3>2. 연구 계획</h3>
+									<p>
+										<figure>
+											<img src="images/plan.jpg" width="90%">
+											<figcaption style="color: gray;">&lt;주간 수행 계획표&gt;</figcaption>
+										</figure>
+										<hr>
+										<ul style="list-style: none;">
+											<li>
+												<strong style="font-size: 21px;">1. 자료조사 :</strong>
+												<b style="font-size: 17px;">관련 자료(논문 및 기술 등) 탐색 및 정리.</b>
+												<br>
+												<span style="font-size: 15px; font-weight: bold;">
+												- HMM 기술을 기반으로 한 맵 매칭 알고리듬 논문자료를 탐색하여 관련되는 기술 및 정확도 등을 정리합니다.
+												</span>
+											</li>
+											<br>
+											<li>
+												<strong style="font-size: 21px;">2. 데이터 수집 :</strong> 
+												<b style="font-size: 17px;">실험에 사용할 데이터를 수집.</b>
+												<br>
+												<span style="font-size: 15px; font-weight: bold;">
+												- <a href="https://zenodo.org/record/57731" target="_blank" style="color:darkcyan;">Dataset for testing and training map-matching methods</a>에서 맵 매칭 알고리즘에 사용할 수 있는 데이터를 다운로드 받습니다.
+												해당 데이터셋은 맵 매칭 알고리즘을 위한 데이터셋으로, 세계 여러 지역에서의 차량 이동 데이터로 구성되어 있습니다.
+												</span>
+											</li>
+											<br>
+											<li>
+												<strong style="font-size: 21px;">3. 데이터 전처리 :</strong>
+												<b style="font-size: 17px;">실험을 위한 데이터 전처리.</b>
+												<br>
+												<span style="font-size: 15px; font-weight: bold;">
+												- 이동 데이터의 데이터 전처리 알고리즘인 <a href="https://codedragon.tistory.com/9645" target="_blank" style="color:darkcyan;">Ramer-Douglas-Peucker algorithm</a>을 적용한 데이터셋을 추출합니다.
+												그리하여 데이터 전처리 알고리즘이 적용된 데이터셋과 raw 데이터셋을 준비합니다. 
+												</span>
+											</li>
+											<br>
+											<li>
+												<strong style="font-size: 21px;">4. 모델 구조 디자인 :</strong>
+												<b style="font-size: 17px;">자료를 기반으로 한 맵 매칭 모델 디자인.</b>
+												<br>
+												<span style="font-size: 15px; font-weight: bold;">
+												- 필요한 함수 및 클래스 등을 구성하며 전반적인 모델의 구조를 디자인합니다.
+												</span>
+											</li>
+											<br>
+											<li>
+												<strong style="font-size: 21px;">5. 모델 구현 :</strong>
+												<b style="font-size: 17px;">디자인된 각 요소들의 구현.</b>
+												<br>
+												<span style="font-size: 15px; font-weight: bold;">
+												- 모델 구조 디자인을 기반으로 하여 각 요소들을 구현(프로그래밍)합니다.
+												</span>
+											</li>
+											<br>
+											<li>
+												<strong style="font-size: 21px;">6. 모델 테스트 및 보수 :</strong>
+												<b style="font-size: 17px;">구현 완료한 모델 테스트 및 보수.</b>
+												<br>
+												<span style="font-size: 15px; font-weight: bold;">
+												- 구현 완료한 각 요소들을 통합하여 모델을 테스트합니다. 테스트 과정을 거친 후, 결과를 기반으로 모델을 보수합니다.
+												</span>
+											</li>
+											<br>
+											<li>
+												<strong style="font-size: 21px;">7. 성능 비교 :</strong>
+												<b style="font-size: 17px;">기존의 HMM 모델과 새 모델 trendHMM 모델의 결과값 비교.</b>
+												<br>
+												<span style="font-size: 15px; font-weight: bold;">
+												- 최종적으로 완성된 모델을 가지고 기존의 HMM 모델과 새 모델 trendHMM 모델의 결과값을 가지고 새 모델의 성능을 평가합니다.
+												성능 평가의 지표는 기존의 HMM 논문(<a href="https://dl.acm.org/doi/abs/10.1145/1653771.1653818" target="_blank" style="color:darkcyan;">Hidden Markov map matching through noise and sparseness</a>)에서
+												사용되었던 Route Mismatch Fraction(RMF, 경로 불일치 비율)로 선택합니다.
+												</span>
+											</li>
+											<br>
+											<li>
+												<strong style="font-size: 21px;">8. 논문 작성 :</strong>
+												<b style="font-size: 17px;">실험 결과를 기반으로 한 논문 작성.</b>
+												<br>
+												<span style="font-size: 15px; font-weight: bold;">
+													실험 결과를 기반으로 논문을 작성합니다. 기존 모델과 새로운 모델과의 기본 성능 차이, 데이터 전처리 과정에 따른 성능 차이를
+													근거로 하여 새로운 모델의 우수성을 기준으로 논문을 작성합니다.
+												</span>
+											</li>
+											<br>
+											<li>
+												<strong style="font-size: 21px;">9. 최종 검토 :</strong>
+												<b style="font-size: 17px;">논문 투고 및 수정.</b>
+												<br>
+												<span style="font-size: 15px; font-weight: bold;">
+													작성 완료된 논문을 해외 저널에 투고한 후, 수정 과정을 수행합니다.
+												</span>
+											</li>
+										</ul>
+									</p>
 								</div>
 							</section>
 
 						<!-- Three -->
 							<section id="three">
 								<div class="container">
-									<h3>A Few Accomplishments</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
+									<h3>3. 연구 과정</h3>
+									<p>
+										코드 및 최종 논문은 다음 URL에서 확인하실 수 있습니다.
+										<br><a href="https://github.com/Jaeho-99/map_matching/tree/main" target="_blank" style="color: darkcyan;">https://github.com/Jaeho-99/map_matching/tree/main</a>
+									</p>
 									<div class="features">
 										<article>
-											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+											<img src="images/pic01.jpg" alt="" />
 											<div class="inner">
-												<h4>Possibly broke spacetime</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+												<h4>&lt;코드 실행 화면&gt;</h4>
+												<p>
+													jupyter notebook으로 코드를 실행하여 결과값을 pickle 파일로 저장합니다.
+												</p>
+											</div>
+											<figure>
+												<img src="images/pic01.jpg" width="50%;">
+												<figcaption style="color: gray;">&lt;main 코드 실행 후 저장된 결과 파일 목록&gt;</figcaption>
+											</figure>
+										</article>
+										<article>
+											<img src="images/pic01.jpg" alt="" />
+											<div class="inner">
+												<h4>&lt;결과 확인 화면&gt;</h4>
+												<p>
+													결과 파일인 pickle 파일들을 읽어서 해당 값들을 그래프로 시각화하여 결과를 비교합니다.
+												</p>
+											</div>
+											<figure>
+												<img src="images/pic01.jpg" width="80%;">
+												<figcaption style="color: gray;">&lt;결과 그래프&gt;</figcaption>
+											</figure>
+											<div class="inner">
+												<p>
+													전반적으로 새 모델인 trendHMM이 더 좋은 성능(낮은 RMF 값)을 보여주고 있음을 확인할 수가 있습니다.
+												</p>
 											</div>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+											<img src="images/pic01.jpg" alt="" />
 											<div class="inner">
-												<h4>Terraformed a small moon</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+												<h4>&lt;논문 작성 화면&gt;</h4>
+												<p>
+													Latex으로 해당 연구에 대한 논문을 작성합니다.
+												</p>
 											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Snapped dark matter in the wild</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
-											</div>
+											<figure>
+												<img src="images/pic01.jpg" width="50%;">
+												<figcaption style="color: gray;">&lt;작성 완료된 논문&gt;</figcaption>
+											</figure>
 										</article>
 									</div>
 								</div>
@@ -142,22 +250,99 @@
 						<!-- Four -->
 							<section id="four">
 								<div class="container">
-									<h3>Contact Me</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
-									<form method="post" action="#">
-										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-											<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-											<div class="col-12"><input type="text" name="subject" id="subject" placeholder="Subject" /></div>
-											<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
-											<div class="col-12">
-												<ul class="actions">
-													<li><input type="submit" class="primary" value="Send Message" /></li>
-													<li><input type="reset" value="Reset Form" /></li>
-												</ul>
-											</div>
-										</div>
-									</form>
+									<h3>4. 결론</h3>
+									<table class="table">
+										<caption style="font-weight: bold;">&lt;샘플링 간격에 따른 경로 불일치 비율값&gt;</caption>
+										<thead><tr>
+											<th>Sampling Interval(s)</th>
+											<th>10</th>
+											<th>20</th>
+											<th>30</th>
+											<th>60</th>
+											<th>120</th>
+										</tr></thead>
+										<tbody>
+											<tr>
+												<td><strong>trendHMM_with_preprocessing</strong></td>
+												<td>0.0918</td>
+												<td><b>0.0938</b></td>
+												<td>0.1083</td>
+												<td>0.1658</td>
+												<td>0.2491</td>
+											</tr>
+											<tr>
+												<td><strong>trendHMM_without_preprocessing</strong></td>
+												<td><b>0.0880</b></td>
+												<td>0.0968</td>
+												<td><b>0.0980</b></td>
+												<td><b>0.1438</b></td>
+												<td><b>0.2469</b></td>
+											</tr>
+											<tr>
+												<td>HMM_with_preprocessing</td>
+												<td>0.1053</td>
+												<td>0.0956</td>
+												<td>0.1189</td>
+												<td>0.1707</td>
+												<td>0.2678</td>
+											</tr>
+											<tr>
+												<td>HMM_without_preprocessing</td>
+												<td>0.1049</td>
+												<td>0.1463</td>
+												<td>0.1523</td>
+												<td>0.1846</td>
+												<td>0.2969</td>
+											</tr>
+										</tbody>
+									</table>
+									<p>
+										trendHMM은 기존의 HMM 모델보다 더 좋은 성능을 보여주고 있으며, 데이터 전처리 과정 없이
+										높은 성능을 보여주고 있는 것을 확인할 수가 있었습니다. 그러므로 trendHMM을 이용한다면
+										더 높은 정확성과 시간적 이점을 얻을 수가 있습니다.
+									</p>
+									<table class="table">
+										<caption style="font-weight: bold;">&lt;best 값을 기준으로한 trendHMM의 HMM 대비 성능 상승률&gt;</caption>
+										<thead><tr>
+											<th>Sampling Interval(s)</th>
+											<th>10</th>
+											<th>20</th>
+											<th>30</th>
+											<th>60</th>
+											<th>120</th>
+										</tr></thead>
+										<tbody>
+											<tr>
+												<td>trendHMM</td>
+												<td>0.0880</td>
+												<td>0.0938</td>
+												<td>0.0980</td>
+												<td>0.1438</td>
+												<td>0.2469</td>
+											</tr>
+											<tr>
+												<td>HMM</td>
+												<td>0.1049</td>
+												<td>0.0956</td>
+												<td>0.1189</td>
+												<td>0.1707</td>
+												<td>0.2678</td>
+											</tr>
+											<tr style="font-weight: bold;">
+												<td>Performance Enhancement</td>
+												<td>16.11%</td>
+												<td>1.88%</td>
+												<td>17.58%</td>
+												<td>15.76%</td>
+												<td>7.80%</td>
+											</tr>
+										</tbody>
+									</table>
+									<p>
+										해당 결과에 기반한 연구에 대한 논문을 작성하였고, 해당 논문은 해외 저널 
+										<a href="https://www.cell.com/heliyon/home" target="_blank" style="color: darkcyan;">Heliyon</a>에
+										투고하였고 리뷰 심사를 거쳐 현재 accept된 상태입니다. 
+									</p>
 								</div>
 							</section>
 
@@ -498,7 +683,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					<section id="footer">
 						<div class="container">
 							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</section>
