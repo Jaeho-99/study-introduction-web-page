@@ -200,7 +200,7 @@
 									</p>
 									<div class="features">
 										<article>
-											<img src="images/pic01.jpg" alt="" />
+											<img src="images/code_main.jpg" alt="" / width="100%">
 											<div class="inner">
 												<h4>&lt;코드 실행 화면&gt;</h4>
 												<p>
@@ -208,12 +208,16 @@
 												</p>
 											</div>
 											<figure>
-												<img src="images/pic01.jpg" width="50%;">
-												<figcaption style="color: gray;">&lt;main 코드 실행 후 저장된 결과 파일 목록&gt;</figcaption>
+												<img src="images/result1.jpg" width="50%;">
+												<figcaption style="color: gray;">&lt;main 코드 실행 후 저장된 결과 파일 목록1(데이터 전처리 O)&gt;</figcaption>
+											</figure>
+											<figure>
+												<img src="images/result2.jpg" width="50%;">
+												<figcaption style="color: gray;">&lt;main 코드 실행 후 저장된 결과 파일 목록2(데이터 전처리 X)&gt;</figcaption>
 											</figure>
 										</article>
 										<article>
-											<img src="images/pic01.jpg" alt="" />
+											<img src="images/code_graph.jpg" alt="" / width="100%">
 											<div class="inner">
 												<h4>&lt;결과 확인 화면&gt;</h4>
 												<p>
@@ -221,17 +225,36 @@
 												</p>
 											</div>
 											<figure>
-												<img src="images/pic01.jpg" width="80%;">
-												<figcaption style="color: gray;">&lt;결과 그래프&gt;</figcaption>
+												<img src="images/graph1.png" width="80%;">
+												<figcaption style="color: gray;">&lt;결과 그래프1&gt;</figcaption>
+											</figure>
+											<figure>
+												<img src="images/graph2.png" width="80%;">
+												<figcaption style="color: gray;">&lt;결과 그래프2&gt;</figcaption>
+											</figure>
+											<figure>
+												<img src="images/graph3.png" width="80%;">
+												<figcaption style="color: gray;">&lt;결과 그래프3&gt;</figcaption>
 											</figure>
 											<div class="inner">
 												<p>
-													전반적으로 새 모델인 trendHMM이 더 좋은 성능(낮은 RMF 값)을 보여주고 있음을 확인할 수가 있습니다.
+													<h4>결과 분석</h4>
+													<p>
+														그림을 통해서 다음과 같은 결론을 내렸습니다.
+														<ol>
+															<li>데이터 전처리 과정이 없는 <b>trendHMM(빨간색)</b>은 모든(데이터 전처리 유/무) <strong>HMM(파란색 및 <span style="color: navy;">네이비색</span>)</strong>보다 <b>더 낮은 RMF(경로 불일치 비율) 값을 보여준다.</b></li>
+															<li>trendHMM은 전반적으로 <span style="color: red; font-weight: 600;">데이터 전처리 과정이 없는 것(빨간색)</span>이 <span style="color: brown; font-weight: 600;">데이터 전처리 과정이 있는 것(갈색)</span>보다 <b>더 좋은(낮은 RMF값) 성능을 보여준다.</b></li>
+															<li style="font-weight: bold;">따라서, <b>trendHMM</b>은 기존 모델인 <strong>HMM</strong>보다 더 좋은 성능을 보여주며, 데이터 전처리 과정을 생략하여 실행 시간을 단축시킬 수 있다는 것을 확인할 수 있다.</li>
+														</ol>
+														* trendHMM : 새로 개발한 모델
+														<br>
+														* HMM : 기존 모델
+													</p>
 												</p>
 											</div>
 										</article>
 										<article>
-											<img src="images/pic01.jpg" alt="" />
+											<img src="images/latex.png" alt="" width="100%" />
 											<div class="inner">
 												<h4>&lt;논문 작성 화면&gt;</h4>
 												<p>
@@ -239,7 +262,7 @@
 												</p>
 											</div>
 											<figure>
-												<img src="images/pic01.jpg" width="50%;">
+												<img src="images/paper.png" width="80%;">
 												<figcaption style="color: gray;">&lt;작성 완료된 논문&gt;</figcaption>
 											</figure>
 										</article>
@@ -339,9 +362,9 @@
 										</tbody>
 									</table>
 									<p>
-										해당 결과에 기반한 연구에 대한 논문을 작성하였고, 해당 논문은 해외 저널 
-										<a href="https://www.cell.com/heliyon/home" target="_blank" style="color: darkcyan;">Heliyon</a>에
-										투고하였고 리뷰 심사를 거쳐 현재 accept된 상태입니다. 
+										해당 결과에 기반한 연구에 대한 논문을 작성하였고, 해당 논문은 
+										<a href="https://www.cell.com/heliyon/home" target="_blank" style="color: darkcyan;">Heliyon</a>
+										이라는 저널에 투고하였습니다.
 									</p>
 								</div>
 							</section>
