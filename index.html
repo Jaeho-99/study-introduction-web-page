@@ -24,8 +24,8 @@
 					<ul>
 						<li><a href="#one" class="active">1. 연구 배경 및 아이디어</a></li>
 						<li><a href="#two">2. 연구 계획</a></li>
-						<li><a href="#three">3. 연구 과정</a></li>
-						<li><a href="#four">4. 결론</a></li>
+						<li><a href="#three">3. 논문 주요 내용</a></li>
+						<li><a href="#four">4. 프로젝트 결과</a></li>
 					</ul>
 				</nav>
 				<footer>
@@ -51,6 +51,8 @@
 									<header class="major">
 										<h2>맵 매칭 연구 프로젝트</h2>
 										<p>2023 홍익대학교 졸업프로젝트<br />
+											<br>(<a href="https://www.sciencedirect.com/science/article/pii/S2405844023085766" target="_blank" style="color: darkcyan;">논문 링크</a>)
+											<br>
 											<br>
 										1. 연구 배경 및 아이디어</p>
 									</header>
@@ -60,15 +62,16 @@
 											<img src="images/news.jpg">
 											<figcaption style="color: gray;">&lt;맵 매칭 기술의 필요성을 보여주는 기사 헤드라인(<a href="https://www.aitimes.com/news/articleView.html?idxno=141310" target="_blank">출처-AI타임스</a>)&gt;</figcaption>
 										</figure>
-										위 기사의 헤드라인과 같이 자율 주행과 같은 교통 서비스를 위해서는 <strong>정밀한 위치 기반 서비스</strong>가 필요합니다.
-										이러한 위치 기반 서비스를 통해서 <strong>도로 네트워크</strong>를 예측할 수 있으며, 이를 통하여 <strong>내비게이션 시스템, 교통 계획 애플리케이션</strong> 등과 같은
-										<strong>다양한 교통 서비스</strong>를 유용하게 활용할 수 있습니다. 이와 같은 <strong>위치 기반 서비스</strong>를 위해서는 <b>정밀한 맵 매칭 기술</b>이 필요합니다.
-										그리고 현재까지 사용되는 맵 매칭 모델 중 가장 보편적인 모델인 <b>Hidden Markov Model(HMM) 기반 맵 매칭</b> 방법이 있습니다. 하지만 기존의 HMM의 경우, <em>현재 상태가 그 이전 상태에만 의존한다는
-										Markov chain rule을 따르기에 시계열 데이터의 종속성을 과하게 단순화시킨다는 문제점이 있습니다.</em> 이로 인해, 도심지에서 볼 수 있는 복잡한 도로 관계 및 이동 패턴을 보이는 경우나,
-										관측치 에러 및 데이터 샘플링 간격이 큰 경우를 접할 때 잘못된 맵 매칭 결과를 보여줍니다. <br> <b>따라서, 위와 같은 기존의 HMM 방법의 단점을 보완하기 위해서 본 연구를 진행하였습니다.</b>
+										<ul>
+											<li>위 기사의 헤드라인과 같이 자율 주행과 같은 교통 서비스를 위해서는 <strong>정밀한 위치 기반 서비스</strong>가 필요합니다.</li>
+											<li>그리고 이와 같은 <strong>위치 기반 서비스</strong>를 위해서는 <b>정밀한 맵 매칭 기술</b>이 필요합니다.</li>
+											<li>그리고 현재까지 사용되는 맵 매칭 모델 중 가장 보편적인 모델인 <b>Hidden Markov Model(HMM) 기반 맵 매칭</b> 방법이 있습니다.</li>
+											<li>하지만 기존의 HMM의 경우, <em>마코프 속성(현재 상태가 그 이전 상태에만 의존한다)</em>을 따르기에 시계열 데이터의 종속성을 과하게 단순화시킨다는 문제점이 있습니다.</li>
+											<li><strong>따라서, 위와 같은 기존의 HMM 방법의 단점을 보완하기 위해서 본 연구를 진행하였습니다.</strong></li>
+										</ul>
 									</p>
 									<p>
-										<h4>1.2. 단어 안내 웹 사이트</h4>
+										<h4>1.2. 단어 안내</h4>
 										<ul>
 											<li><a href="https://ratsgo.github.io/machine%20learning/2017/03/18/HMMs/" target="_blank" style="color:darkcyan;">Hidden Markov Model(은닉 마코프 모델)</a></li>
 											<li><a href="https://brunch.co.kr/@nostalgia9/500" target="_blank" style="color:darkcyan;">Map Matching(맵 매칭)</a></li>
@@ -76,11 +79,13 @@
 									</p>
 									<p>
 										<h4>1.3. 아이디어</h4>
-										기존의 HMM 모델에서 제기되었던 데이터 간의 <b>종속성 단순화 관련 문제점을 해결하기 위한 방법</b>을 모색하였습니다.
-										기존의 HMM 모델의 경우 현재 상태(t 시각)의 데이터는 그 이전 상태(t-1 시각)의 데이터만 고려한다는 문제점에 대해서,
-										더 넓은 범위의 시간 종속성을 고려하도록 알고리즘을 수정하면 문제를 보완할 수 있다고 생각하였습니다. 따라서, 만약 t 시각의 위치를 예측한다고 가정하였을 때, 기존에는 t-1 시각의 데이터에만 의존하였지만,
-										새로운 방법으로, <strong>데이터를 여러 개로 묶어 {t-1, t-2, t-n, t+1, t+2, t+n}의 데이터에 대해서 가장 이동 방향 경향성(trend)를 잘따르는 데이터로 맵 매칭을 적용하도록</strong> 알고리즘을 수정해보기로 하였습니다.
-										<br>trendHMM(본 연구에서 개발한 알고리즘)의 주요 아이디어는 다음과 같습니다. 
+										<ul>
+											<li>본 연구에서는 HMM의 가정을 보완하는 새로운 알고리즘인 "trendHMM 맵 매칭"을 제안합니다.</li>
+											<li>연구의 주요 아이디어는, 이웃 데이터의 이동을 고려함으로써 현재 위치 데이터의 더 넓은 범위의 종속성을 고려한다는 것입니다.</li>
+											<li>이를 위해 이웃 위치 데이터를 포함하는 윈도우 개념이 소개됩니다.</li>
+											<li><strong>따라서 trendHMM은 연속적인 위치 데이터 간의 관계를 활용하여, 기존의 HMM 모델에서 제기되었던 데이터 간의 종속성 단순화 관련 문제점을 해결하였습니다.</strong></li>
+										</ul>
+										<br> 
 										<figure>
 											<img src="images/fig1-3.jpg" width="100%">
 											<figcaption style="color: gray;">&lt;아이디어&gt;</figcaption>
@@ -193,79 +198,267 @@
 						<!-- Three -->
 							<section id="three">
 								<div class="container">
-									<h3>3. 연구 과정</h3>
+									<h3>3. 논문 주요 내용</h3>
 									<p>
-										코드 및 최종 논문은 다음 URL에서 확인하실 수 있습니다.
-										<br>코드: <a href="https://github.com/Jaeho-99/map_matching/tree/main" target="_blank" style="color: darkcyan;">https://github.com/Jaeho-99/map_matching/tree/main</a>
-										<br>논문: <a href="https://www.sciencedirect.com/science/article/pii/S2405844023085766" target="_blank" style="color: darkcyan;">https://www.sciencedirect.com/science/article/pii/S2405844023085766</a>
+										코드 및 최종 논문은 다음 링크에서 확인하실 수 있습니다.
+										<br>코드 : <a href="https://github.com/Jaeho-99/map_matching/tree/main" target="_blank" style="color: darkcyan;">https://github.com/Jaeho-99/map_matching/tree/main</a>
+										<br>논문 : <a href="https://www.sciencedirect.com/science/article/pii/S2405844023085766" target="_blank" style="color: darkcyan;">https://www.sciencedirect.com/science/article/pii/S2405844023085766</a>
 									</p>
 									<div class="features">
-										<article>
-											<img src="images/code_main.jpg" alt="" / width="100%">
-											<div class="inner">
-												<h4>&lt;코드 실행 화면&gt;</h4>
-												<p>
-													jupyter notebook으로 코드를 실행하여 결과값을 pickle 파일로 저장합니다.
-												</p>
-											</div>
-											<figure>
-												<img src="images/result1.jpg" width="50%;">
-												<figcaption style="color: gray;">&lt;main 코드 실행 후 저장된 결과 파일 목록1(데이터 전처리 O)&gt;</figcaption>
-											</figure>
-											<figure>
-												<img src="images/result2.jpg" width="50%;">
-												<figcaption style="color: gray;">&lt;main 코드 실행 후 저장된 결과 파일 목록2(데이터 전처리 X)&gt;</figcaption>
-											</figure>
+										<article style="color: black; font-weight: bold;">
+											논문의 구성은 다음과 같습니다.
+											<br>
+											<br>
+											<h4 style="color: black;">0. 개요(Abstract)</h4>
+											<ul>
+												<li>논문의 전체적인 내용 설명.</li>
+											</ul>
+											<h4 style="color: black;">1. 소개(Abstract)</h4>
+											<ul>
+												<li>논문 내용에 대한 간단한 소개.</li>
+											</ul>
+											<h4 style="color: black;">2. 관련 연구(Related Works)</h4>
+											<ul>
+												<li>본 연구 주제와 관련된 다른 연구에 대한 간단한 소개.</li>
+											</ul>
+											<h4 style="color: black;">3. 알고리즘(An enhanced version of HMM based map matching algorithm)</h4>
+											<ul>
+												<li>section 3.1 : 용어 설명.</li>
+												<li>section 3.2 : HMM 기반 맵 매칭 기초.</li>
+												<li>section 3.3 : HMM 기반 맵 매칭의 한계.</li>
+												<li>section 3.4 : 제안된 알고리즘(trendHMM).</li>
+											</ul>
+											<h4 style="color: black;">4. 실험(Experiments)</h4>
+											<ul>
+												<li>section 4.1 : 데이터 및 실험 설정.</li>
+												<li>section 4.2 : 파라미터 추정.</li>
+												<li>section 4.3 : 실험 결과.</li>
+											</ul>
+											<h4 style="color: black;">5. 결과 및 미래 연구(Conclusion and future research)</h4>
+											<ul>
+												<li>논문 결과 및 미래 연구 방향성 제시.</li>
+											</ul>
+											
 										</article>
 										<article>
-											<img src="images/code_graph.jpg" alt="" / width="100%">
-											<div class="inner">
-												<h4>&lt;결과 확인 화면&gt;</h4>
-												<p>
-													결과 파일인 pickle 파일들을 읽어서 해당 값들을 그래프로 시각화하여 결과를 비교합니다.
-												</p>
-											</div>
-											<figure>
-												<img src="images/graph1.png" width="80%;">
-												<figcaption style="color: gray;">&lt;결과 그래프1&gt;</figcaption>
-											</figure>
-											<figure>
-												<img src="images/graph2.png" width="80%;">
-												<figcaption style="color: gray;">&lt;결과 그래프2&gt;</figcaption>
-											</figure>
-											<figure>
-												<img src="images/graph3.png" width="80%;">
-												<figcaption style="color: gray;">&lt;결과 그래프3&gt;</figcaption>
-											</figure>
 											<div class="inner">
 												<p>
-													<h4>결과 분석</h4>
-													<p>
-														그림을 통해서 다음과 같은 결론을 내렸습니다.
-														<ol>
-															<li>데이터 전처리 과정이 없는 <b>trendHMM(빨간색)</b>은 모든(데이터 전처리 유/무) <strong>HMM(파란색 및 <span style="color: navy;">네이비색</span>)</strong>보다 <b>더 낮은 RMF(경로 불일치 비율) 값을 보여준다.</b></li>
-															<li>trendHMM은 전반적으로 <span style="color: red; font-weight: 600;">데이터 전처리 과정이 없는 것(빨간색)</span>이 <span style="color: brown; font-weight: 600;">데이터 전처리 과정이 있는 것(갈색)</span>보다 <b>더 좋은(낮은 RMF값) 성능을 보여준다.</b></li>
-															<li style="font-weight: bold;">따라서, <b>trendHMM</b>은 기존 모델인 <strong>HMM</strong>보다 더 좋은 성능을 보여주며, 데이터 전처리 과정을 생략하여 실행 시간을 단축시킬 수 있다는 것을 확인할 수 있다.</li>
-														</ol>
-														* trendHMM : 새로 개발한 모델
-														<br>
-														* HMM : 기존 모델
-													</p>
+												<h4>0. 개요</h4>
+													<ul>
+														<li>이 논문은 Hidden Markov Model (HMM)을 이용한 기존 맵 매칭 알고리즘의 한계를 극복하기 위해 "trendHMM 맵 매칭"이라는 새로운 알고리즘을 제안합니다.</li>
+														<li>기존 HMM 모델은 시계열 데이터의 의존성을 과도하게 간소화하여 정확한 매칭 결과를 얻기가 어려운 반면, trendHMM은 주변 데이터의 이동을 고려하여 더 넓은 범위의 데이터 의존성을 반영합니다.</li>
+														<li>실험 결과, trendHMM 맵 매칭은 다양한 환경과 데이터에 대해 정확한 결과를 제공하였고, Route Mismatch Fraction를 기준으로 기존 대비 최대 17.58%의 성능 향상을 보여주었습니다.</li>
+													</ul>
 												</p>
 											</div>
-										</article>
-										<article>
-											<img src="images/latex.png" alt="" width="100%" />
+											<hr>
 											<div class="inner">
-												<h4>&lt;논문 작성 화면&gt;</h4>
 												<p>
-													Latex으로 해당 연구에 대한 논문을 작성합니다.
+												<h4>1. 소개</h4>
+													<ul>
+														<li>연구에서는 무선 통신과 지리 위치 기술 발전으로 수집되는 대량의 지리 데이터 처리에 초점을 맞추고 있습니다. </li>
+														<li>맵 매칭 기술 중 Hidden Markov Model(HMM)을 사용한 접근 방식의 한계를 극복하기 위해 "trendHMM" 맵 매칭 알고리즘을 제안합니다.</li>
+														<li>기존 HMM 기반 알고리즘이 데이터의 이동을 과도하게 단순화하는 문제를 다루기 위해 해당 연구의 알고리즘은 데이터의 이동 경향을 고려하여 성능을 향상시켰습니다. </li>
+														<li>실험 결과, trendHMM이 기존 HMM 기반 방법보다 정확한 결과를 보여주었고, 데이터 전처리 없이 우수한 성능을 보여주었습니다.</li>
+
+													</ul>
 												</p>
 											</div>
-											<figure>
-												<img src="images/paper.png" width="80%;">
-												<figcaption style="color: gray;">&lt;작성 완료된 논문&gt;</figcaption>
-											</figure>
+											<hr>
+											<div class="inner">
+												<p>
+												<h4>2. 관련 연구</h4>
+													<ul>
+														<li>대부분의 맵 매칭 알고리즘은 유사성 모델, 후보 진화 모델, 스코어링 모델, 상태 전이 모델 네 가지 범주로 널리 분류됩니다.</li>
+														<li>이 중 상태 전이 모델은 Hidden Markov Model (HMM)을 사용하며, 이는 연속적인 지리 데이터의 맵 매칭에 주로 활용됩니다.</li>
+														<li>HMM은 Markov 체인의 상태를 직접 관찰할 수 없지만 관측된 측정치에서 유추할 수 있는 경우에 중점을 둡니다. 이 모델은 도로 네트워크 근처의 도로를 후보 위치로 고려하고 최종 매칭 경로를 결정합니다. </li>
+													</ul>
+												</p>
+											</div>
+											<hr>
+											<div class="inner">
+												<p>
+												<h4>3. 알고리즘</h4>
+													<br>
+													<h4>3.1 주요 용어</h4>
+													<ul>
+														<li><span style="font-weight: bold;">Geolocation data</span> : 측정된 지리 위치 좌표.</li>
+														<li><span style="font-weight: bold;">Trajectory (Tr)</span> : 이동 데이터의 시간적 순서.</li>
+														<li><span style="font-weight: bold;">Road Network</span> : 도로 연결성의 그래프 표현.</li>
+														<li><span style="font-weight: bold;">Route</span> : 궤적과 일치하는 도로 네트워크의 엣지로 구성된 시계열.</li>
+													</ul>
+													
+													<br>
+													<h4>3.2 HMM 기반 맵 매칭 기초 개념</h4>
+													<ul>
+														<li><span style="font-weight: bold;">목적</span> : 궤적의 각 운동 데이터를 도로 네트워크의 특정 엣지에 매치.</li>
+														<li><span style="font-weight: bold;">모델링 방식</span> : 실제로 객체가 위치한 엣지를 숨겨진 상태로 모델링.</li>
+														<li><span style="font-weight: bold;">방출 확률</span> : 실제 도로 위치를 관측할 확률.</li>
+														<li><span style="font-weight: bold;">전이 확률</span> : 실제로 다른 후보로 전환할 확률.</li>
+														<li><span style="font-weight: bold;">Viterbi 알고리즘</span> : 가장 가능성 있는 경로를 효율적으로 계산하기 위해 사용됨.</li>
+													</ul>
+
+													<br>
+													<h4>3.3 HMM 기반 맵 매칭의 한계</h4>
+													<ul>
+														<li><span style="font-weight: bold;">HMM 가정</span> : 시간 𝑡의 관측값은 이전 시간 𝑡 - 1에만 의존한다는 가정 (마코프 속성).</li>
+														<li><span style="font-weight: bold;">한계</span> : 단순화된 가정으로 인한 부정확한 일치.</li>
+													</ul>
+
+													<br>
+													<h4>3.4 제안된 알고리즘 (trendHMM 맵 매칭 알고리즘)</h4>
+													<ul>
+														<li><span style="font-weight: bold;">주요 개념</span> : movement 트렌드 개념 도입.</li>
+														<li><span style="font-weight: bold;">movement 트렌드</span> : 주변 데이터 포인트를 포함한 더 넓은 범위의 이동 데이터에 의존.</li>
+														<li><span style="font-weight: bold;">알고리즘 단계</span> :
+															<ul>
+																<li><span style="font-weight: bold;">단계 1 (addTrendWeight)</span> : movement 트렌드를 계산에 추가.</li>
+																<li><span style="font-weight: bold;">단계 2 (trendForward)</span> : trendHMM에 맞게 수정된 forward 연산.</li>
+																<li><span style="font-weight: bold;">단계 3 (backward)</span> : 최종 일치 경로를 반환하기 위한 역방향 단계.</li>
+															</ul>
+														</li>
+														<li><span style="font-weight: bold;">알고리즘 복잡도 : 
+															<ul>
+																<li><span style="font-weight: bold;">시간 복잡도</span> : HMM 및 trendHMM 모두에 대해 𝑂(𝑇 𝐶^2).</li>
+																<li><span style="font-weight: bold;">공간 복잡도</span> : HMM 및 trendHMM 모두에 대해 𝑂(𝐿).</li>
+															</ul>
+														</li>
+														<li>
+															<span style="font-weight: bold;">알고리즘 세부 정보</span> :
+															<ul>
+																<li><span style="font-weight: bold;">가중치 계산</span> : 맵 매칭 점수 계산 시 운동 트렌드를 고려하는 가중치 𝑊𝑡𝑟𝑒𝑛𝑑 도입.</li>
+																<li><span style="font-weight: bold;">윈도우 구성</span> : 주변 데이터 포인트를 그룹화하여 관련 운동 트렌드를 포착하기 위한 윈도우 생성.</li>
+																<li><span style="font-weight: bold;">중심 계산</span> : 윈도우 내 이전 시간 단계의 데이터 포인트의 중심 계산.</li>
+																<li><span style="font-weight: bold;">궤적 구성</span> : 데이터 포인트를 연결하여 운동 트렌드를 포함한 새로운 궤적 생성.</li>
+															</ul>
+														</li>
+													</ul>
+													<figure>
+														<img src="./images/alg.png", width="70%">
+													</figure>
+												</p>
+											</div>
+											<hr>
+											<div class="inner">
+												<p>
+												<h4>4. 실험</h4>
+												<br>
+												<h4>4.1 데이터 및 실험 설정</h4>
+												<ul>
+													<li>실험에 사용된 데이터는 전 세계의 다양한 위치에 걸친 100개의 지리 위치 트랙으로 구성된 대규모 실제 데이터셋입니다.</li>
+													<li><span style="font-weight: bold;">매칭 정확도 측정</span> : Route Mismatch Fraction (RMF)를 사용하여 매칭 정확도를 측정하며, RMF는 거짓 양성 도로 세그먼트의 총 길이(𝑑+)와 거짓 음성 도로 세그먼트의 총 길이(𝑑-)를 포함하여 맵 매칭 오류를 나타냅니다.</li>
+												</ul>
+												<h4>4.2 파라미터 추정</h4>
+												<ul>
+													<li>실험에서는 trendHMM 알고리즘에 대한 윈도우 크기(𝑊) 추정이 필요하며, 실험을 통해 다양한 샘플링 간격에 대한 최적의 𝑊 값을 선택합니다.</li>
+												</ul>
+												<h4>4.3 실험 결과</h4>
+												<ul>
+													<li><span style="font-weight: bold;">효율성 평가</span> : trendHMM의 효율성은 다양한 샘플링 간격에서 비교되며, 기존의 HMM 기반 방법과의 RMF 값을 비교하여 평가됩니다.</li>
+													<li><span style="font-weight: bold;">파라미터 추정 결과</span> : 𝑊 값의 변화에 따른 실험 결과를 통해 𝑊 값이 작을 때는 성능이 향상되는 경향이 있지만, 샘플링 간격이 커질수록 성능이 하락하는 것을 확인했습니다.</li>
+												</ul>
+												<table>
+													<caption style="font-weight: bold;">&lt;샘플링 간격에 따른 경로 불일치 비율값&gt;</caption>
+													<thead><tr>
+														<th>Sampling Interval(s)</th>
+														<th>10</th>
+														<th>20</th>
+														<th>30</th>
+														<th>60</th>
+														<th>120</th>
+													</tr></thead>
+													<tbody>
+														<tr>
+															<td><strong>trendHMM_with_preprocessing</strong></td>
+															<td>0.0918</td>
+															<td><b>0.0938</b></td>
+															<td>0.1083</td>
+															<td>0.1658</td>
+															<td>0.2491</td>
+														</tr>
+														<tr>
+															<td><strong>trendHMM_without_preprocessing</strong></td>
+															<td><b>0.0880</b></td>
+															<td>0.0968</td>
+															<td><b>0.0980</b></td>
+															<td><b>0.1438</b></td>
+															<td><b>0.2469</b></td>
+														</tr>
+														<tr>
+															<td>HMM_with_preprocessing</td>
+															<td>0.1053</td>
+															<td>0.0956</td>
+															<td>0.1189</td>
+															<td>0.1707</td>
+															<td>0.2678</td>
+														</tr>
+														<tr>
+															<td>HMM_without_preprocessing</td>
+															<td>0.1049</td>
+															<td>0.1463</td>
+															<td>0.1523</td>
+															<td>0.1846</td>
+															<td>0.2969</td>
+														</tr>
+													</tbody>
+												</table>
+												
+												<table class="table">
+													<caption style="font-weight: bold;">&lt;best 값을 기준으로한 trendHMM의 HMM 대비 성능 상승률&gt;</caption>
+													<thead><tr>
+														<th>Sampling Interval(s)</th>
+														<th>10</th>
+														<th>20</th>
+														<th>30</th>
+														<th>60</th>
+														<th>120</th>
+													</tr></thead>
+													<tbody>
+														<tr>
+															<td>trendHMM</td>
+															<td>0.0880</td>
+															<td>0.0938</td>
+															<td>0.0980</td>
+															<td>0.1438</td>
+															<td>0.2469</td>
+														</tr>
+														<tr>
+															<td>HMM</td>
+															<td>0.1049</td>
+															<td>0.0956</td>
+															<td>0.1189</td>
+															<td>0.1707</td>
+															<td>0.2678</td>
+														</tr>
+														<tr style="font-weight: bold;">
+															<td>Performance Enhancement</td>
+															<td>16.11%</td>
+															<td>1.88%</td>
+															<td>17.58%</td>
+															<td>15.76%</td>
+															<td>7.80%</td>
+														</tr>
+													</tbody>
+												</table>
+												</p>
+												<ul>
+													<li><span style="font-weight: bold;">데이터 전처리 비교</span> : HMM는 전처리가 필수적인 반면, trendHMM은 데이터 전처리 없이도 더 나은 성능을 보여줍니다.</li>
+													<li><span style="font-weight: bold;">성능 비교</span> : trendHMM은 전반적으로 높은 성능을 보이며, HMM을 능가하는 결과를 얻을 수 있습니다.</li>
+													<li><span style="font-weight: bold;">장점</span> : 기존의 HMM은 매우 단기간의 종속성만 고려하나, trendHMM은 윈도우 크기를 조정하여 시간 의존성을 더 유연하게 조절할 수 있습니다. 또한, trendHMM는 데이터 전처리 없이도 높은 효율성을 보이며, 이는 전처리 관련 비용을 절감할 수 있는 장점으로 나타납니다.</li>
+												</ul>
+											</div>
+											<hr>
+											<div class="inner">
+												<p>
+												<h4>5. 결론</h4>
+												<ul>
+													<li><span style="font-weight: bold;">제안한 방법</span> : 기존의 HMM 기반 맵 매칭을 향상시키기 위해 trendHMM 맵 매칭 방법을 제안했습니다. trendHMM은 더 넓은 움직임 패턴을 고려하여 HMM의 한계를 극복하며, 동시에 전통적인 방법과 동일한 시간 복잡성을 유지합니다.</li>
+													<li><span style="font-weight: bold;">실험 결과</span> : 다양한 샘플링 간격으로의 실험을 통해 trendHMM은 우수한 성능을 보여주었습니다. 특히, HMM과 달리 trendHMM은 데이터 전처리 없이 높은 정확도를 달성했습니다.</li>
+													<li><span style="font-weight: bold;">전처리 비용 감소</span> : 결과적으로, trendHMM은 기존의 HMM 접근 방식과 관련된 전처리 비용을 줄일 수 있음을 알 수 있습니다.</li>
+													<li><span style="font-weight: bold;">향후 연구 방향</span> : trendHMM은 속도, 방향, 또는 도로 선호도와 같은 외부 요소를 고려하지 않고 통계 모델링만을 사용하는 방법입니다. 따라서 이는 맵 상의 도로를 식별하는 맵 추론 문제에 더 적합할 것으로 예상됩니다. </li>
+												</ul>
+												</p>
+											</div>
 										</article>
 									</div>
 								</div>
@@ -274,434 +467,25 @@
 						<!-- Four -->
 							<section id="four">
 								<div class="container">
-									<h3>4. 결론</h3>
-									<table class="table">
-										<caption style="font-weight: bold;">&lt;샘플링 간격에 따른 경로 불일치 비율값&gt;</caption>
-										<thead><tr>
-											<th>Sampling Interval(s)</th>
-											<th>10</th>
-											<th>20</th>
-											<th>30</th>
-											<th>60</th>
-											<th>120</th>
-										</tr></thead>
-										<tbody>
-											<tr>
-												<td><strong>trendHMM_with_preprocessing</strong></td>
-												<td>0.0918</td>
-												<td><b>0.0938</b></td>
-												<td>0.1083</td>
-												<td>0.1658</td>
-												<td>0.2491</td>
-											</tr>
-											<tr>
-												<td><strong>trendHMM_without_preprocessing</strong></td>
-												<td><b>0.0880</b></td>
-												<td>0.0968</td>
-												<td><b>0.0980</b></td>
-												<td><b>0.1438</b></td>
-												<td><b>0.2469</b></td>
-											</tr>
-											<tr>
-												<td>HMM_with_preprocessing</td>
-												<td>0.1053</td>
-												<td>0.0956</td>
-												<td>0.1189</td>
-												<td>0.1707</td>
-												<td>0.2678</td>
-											</tr>
-											<tr>
-												<td>HMM_without_preprocessing</td>
-												<td>0.1049</td>
-												<td>0.1463</td>
-												<td>0.1523</td>
-												<td>0.1846</td>
-												<td>0.2969</td>
-											</tr>
-										</tbody>
-									</table>
-									<p>
-										trendHMM은 기존의 HMM 모델보다 더 좋은 성능을 보여주고 있으며, 데이터 전처리 과정 없이
-										높은 성능을 보여주고 있는 것을 확인할 수가 있었습니다. 그러므로 trendHMM을 이용한다면
-										더 높은 정확성과 시간적 이점을 얻을 수가 있습니다.
-									</p>
-									<table class="table">
-										<caption style="font-weight: bold;">&lt;best 값을 기준으로한 trendHMM의 HMM 대비 성능 상승률&gt;</caption>
-										<thead><tr>
-											<th>Sampling Interval(s)</th>
-											<th>10</th>
-											<th>20</th>
-											<th>30</th>
-											<th>60</th>
-											<th>120</th>
-										</tr></thead>
-										<tbody>
-											<tr>
-												<td>trendHMM</td>
-												<td>0.0880</td>
-												<td>0.0938</td>
-												<td>0.0980</td>
-												<td>0.1438</td>
-												<td>0.2469</td>
-											</tr>
-											<tr>
-												<td>HMM</td>
-												<td>0.1049</td>
-												<td>0.0956</td>
-												<td>0.1189</td>
-												<td>0.1707</td>
-												<td>0.2678</td>
-											</tr>
-											<tr style="font-weight: bold;">
-												<td>Performance Enhancement</td>
-												<td>16.11%</td>
-												<td>1.88%</td>
-												<td>17.58%</td>
-												<td>15.76%</td>
-												<td>7.80%</td>
-											</tr>
-										</tbody>
-									</table>
-									<p>
-										해당 결과에 기반하여 연구에 대한 논문을 작성하였고, 해당 논문은 
-										<a href="https://www.cell.com/heliyon/home" target="_blank" style="color: darkcyan;">Heliyon</a>
-										이라는 저널에 투고하였으며, 다음 URL에서 확인하실 수 있습니다.
-										<br><a href="https://www.sciencedirect.com/science/article/pii/S2405844023085766" target="_blank" style="color: darkcyan;">https://www.sciencedirect.com/science/article/pii/S2405844023085766</a>
-										
-									</p>
+									<h3>4. 프로젝트 결과</h3>
+									<h4>1. 주요 내용</h4>
+									<ul>
+										<li>HMM 기반 맵 매칭을 보완한 새로운 맵 매칭 모델을 연구하고, 해당 연구 결과를 기반으로 논문을 작성하였습니다.</li>
+									</ul>
+									<h4>2. 사용 기술</h4>
+									<ul>
+										<li>언어 : Python</li>
+										<li>기타 : CUDA, Jupyter Notebook, Anaconda</li>
+										<li>알고리즘 : HMM, Forward-Backward, Viterbi</li>
+										<li>알고리즘 참고 : <a href="https://ratsgo.github.io/machine%20learning/2017/03/18/HMMs/" target="_blank" style="color:darkcyan;">Hidden Markov Model(은닉 마코프 모델)</a></li>
+									</ul>
+									<h4>3. 결과물</h4>
+									<ul>
+										<ul>코드 : <a href="https://github.com/Jaeho-99/map_matching" target="_blank" style="color: darkcyan;">https://github.com/Jaeho-99/map_matching</a></ul>
+										<ul>논문 : <a href="https://www.sciencedirect.com/science/article/pii/S2405844023085766" target="_blank" style="color: darkcyan;">https://www.sciencedirect.com/science/article/pii/S2405844023085766</a></ul>
+									</ul>
 								</div>
 							</section>
-
-						<!-- Five -->
-						<!--
-							<section id="five">
-								<div class="container">
-									<h3>Elements</h3>
-
-									<section>
-										<h4>Text</h4>
-										<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-										This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-										This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-										<hr />
-										<header>
-											<h4>Heading with a Subtitle</h4>
-											<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-										</header>
-										<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-										<header>
-											<h5>Heading with a Subtitle</h5>
-											<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-										</header>
-										<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-										<hr />
-										<h2>Heading Level 2</h2>
-										<h3>Heading Level 3</h3>
-										<h4>Heading Level 4</h4>
-										<h5>Heading Level 5</h5>
-										<h6>Heading Level 6</h6>
-										<hr />
-										<h5>Blockquote</h5>
-										<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-										<h5>Preformatted</h5>
-										<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-									</section>
-
-									<section>
-										<h4>Lists</h4>
-										<div class="row">
-											<div class="col-6 col-12-xsmall">
-												<h5>Unordered</h5>
-												<ul>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Sagittis adipiscing lorem eleifend.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ul>
-												<h5>Alternate</h5>
-												<ul class="alt">
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Sagittis adipiscing lorem eleifend.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ul>
-											</div>
-											<div class="col-6 col-12-xsmall">
-												<h5>Ordered</h5>
-												<ol>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Etiam vel felis at lorem sed viverra.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Etiam vel felis at lorem sed viverra.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ol>
-												<h5>Icons</h5>
-												<ul class="icons">
-													<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-													<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-													<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-													<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-													<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-													<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-												</ul>
-											</div>
-										</div>
-										<h5>Actions</h5>
-										<ul class="actions">
-											<li><a href="#" class="button primary">Default</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt">Default</a></li>
-										</ul>
-										<ul class="actions small">
-											<li><a href="#" class="button primary small">Small</a></li>
-											<li><a href="#" class="button small">Small</a></li>
-											<li><a href="#" class="button alt small">Small</a></li>
-										</ul>
-										<div class="row">
-											<div class="col-3 col-6-medium col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary">Default</a></li>
-													<li><a href="#" class="button">Default</a></li>
-													<li><a href="#" class="button alt">Default</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6 col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary small">Small</a></li>
-													<li><a href="#" class="button small">Small</a></li>
-													<li><a href="#" class="button alt small">Small</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6-medium col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary fit">Default</a></li>
-													<li><a href="#" class="button fit">Default</a></li>
-													<li><a href="#" class="button alt fit">Default</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6-medium col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary small fit">Small</a></li>
-													<li><a href="#" class="button small fit">Small</a></li>
-													<li><a href="#" class="button alt small fit">Small</a></li>
-												</ul>
-											</div>
-										</div>
-									</section>
-
-									<section>
-										<h4>Table</h4>
-										<h5>Default</h5>
-										<div class="table-wrapper">
-											<table>
-												<thead>
-													<tr>
-														<th>Name</th>
-														<th>Description</th>
-														<th>Price</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Item One</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Two</td>
-														<td>Vis ac commodo adipiscing arcu aliquet.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Three</td>
-														<td> Morbi faucibus arcu accumsan lorem.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Four</td>
-														<td>Vitae integer tempus condimentum.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Five</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="2"></td>
-														<td>100.00</td>
-													</tr>
-												</tfoot>
-											</table>
-										</div>
-
-										<h5>Alternate</h5>
-										<div class="table-wrapper">
-											<table class="alt">
-												<thead>
-													<tr>
-														<th>Name</th>
-														<th>Description</th>
-														<th>Price</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Item One</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Two</td>
-														<td>Vis ac commodo adipiscing arcu aliquet.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Three</td>
-														<td> Morbi faucibus arcu accumsan lorem.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Four</td>
-														<td>Vitae integer tempus condimentum.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Five</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="2"></td>
-														<td>100.00</td>
-													</tr>
-												</tfoot>
-											</table>
-										</div>
-									</section>
-
-									<section>
-										<h4>Buttons</h4>
-										<ul class="actions">
-											<li><a href="#" class="button primary">Primary</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt">Alternate</a></li>
-										</ul>
-										<ul class="actions">
-											<li><a href="#" class="button primary large">Large</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt small">Small</a></li>
-										</ul>
-										<ul class="actions fit">
-											<li><a href="#" class="button primary fit">Fit</a></li>
-											<li><a href="#" class="button fit">Fit</a></li>
-											<li><a href="#" class="button alt fit">Fit</a></li>
-										</ul>
-										<ul class="actions fit small">
-											<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-											<li><a href="#" class="button fit small">Fit + Small</a></li>
-											<li><a href="#" class="button alt fit small">Fit + Small</a></li>
-										</ul>
-										<ul class="actions">
-											<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-											<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-											<li><a href="#" class="button alt icon solid fa-check">Icon</a></li>
-										</ul>
-										<ul class="actions">
-											<li><span class="button primary disabled">Primary</span></li>
-											<li><span class="button disabled">Default</span></li>
-											<li><span class="button alt disabled">Alternate</span></li>
-										</ul>
-									</section>
-
-									<section>
-										<h4>Form</h4>
-										<form method="post" action="#">
-											<div class="row gtr-uniform">
-												<div class="col-6 col-12-xsmall">
-													<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-												</div>
-												<div class="col-6 col-12-xsmall">
-													<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-												</div>
-												<div class="col-12">
-													<select name="demo-category" id="demo-category">
-														<option value="">- Category -</option>
-														<option value="1">Manufacturing</option>
-														<option value="1">Shipping</option>
-														<option value="1">Administration</option>
-														<option value="1">Human Resources</option>
-													</select>
-												</div>
-												<div class="col-4 col-12-medium">
-													<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-													<label for="demo-priority-low">Low Priority</label>
-												</div>
-												<div class="col-4 col-12-medium">
-													<input type="radio" id="demo-priority-normal" name="demo-priority">
-													<label for="demo-priority-normal">Normal Priority</label>
-												</div>
-												<div class="col-4 col-12-medium">
-													<input type="radio" id="demo-priority-high" name="demo-priority">
-													<label for="demo-priority-high">High Priority</label>
-												</div>
-												<div class="col-6 col-12-medium">
-													<input type="checkbox" id="demo-copy" name="demo-copy">
-													<label for="demo-copy">Email me a copy of this message</label>
-												</div>
-												<div class="col-6 col-12-medium">
-													<input type="checkbox" id="demo-human" name="demo-human" checked>
-													<label for="demo-human">I am a human and not a robot</label>
-												</div>
-												<div class="col-12">
-													<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-												</div>
-												<div class="col-12">
-													<ul class="actions">
-														<li><input type="submit" value="Send Message" /></li>
-														<li><input type="reset" value="Reset" class="alt" /></li>
-													</ul>
-												</div>
-											</div>
-										</form>
-									</section>
-
-									<section>
-										<h4>Image</h4>
-										<h5>Fit</h5>
-										<span class="image fit"><img src="images/banner.jpg" alt="" /></span>
-										<div class="box alt">
-											<div class="row gtr-50 gtr-uniform">
-												<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-											</div>
-										</div>
-										<h5>Left &amp; Right</h5>
-										<p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-										<p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-									</section>
-
-								</div>
-							</section>
-						-->
 
 					</div>
 
